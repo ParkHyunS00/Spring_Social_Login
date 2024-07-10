@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-image {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .profile-id, .profile-nickname {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="profile-container">
+    <img th:src="@{${userInfo.profileImageUrl}}" alt="Profile Image" class="profile-image">
+    <div class="profile-id">ID: <span th:text="${userInfo.id}"></span></div>
+    <div class="profile-nickname">Nickname: <span th:text="${userInfo.nickname}"></span></div>
+</div>
+</body>
+</html>
